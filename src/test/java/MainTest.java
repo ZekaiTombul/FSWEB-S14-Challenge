@@ -78,14 +78,15 @@ public class MainTest {
         hamburger.addHamburgerAddition2("test", 3);
         hamburger.addHamburgerAddition3("test", 3);
         hamburger.itemizeHamburger();
-        assertEquals(hamburger.getPrice(), 13);
+        double totalPrice = hamburger.itemizeHamburger();  // 4 + 3 + 3 + 3 = 13
+        assertEquals(13.0, totalPrice);
 
     }
 
     @DisplayName("Deluxe Burger sınıf değişkenleri doğru değerlere sahip mi?")
     @Test
     public void testDeluxeBurgerInstanceVariables() throws NoSuchFieldException {
-        assertEquals(deluxeBurger.getCips(), "CURVY");
+        assertEquals(deluxeBurger.getChips(), "CURVY");
         assertEquals(deluxeBurger.getDrink(), "COKE");
     }
 
@@ -111,7 +112,8 @@ public class MainTest {
         healthyBurger.addHealthyAddition1("test", 2);
         healthyBurger.addHealthyAddition2("test", 2);
         healthyBurger.itemizeHamburger();
-        assertEquals(healthyBurger.getPrice(), 9.67);
+        double totalPrice = healthyBurger.itemizeHamburger();  // 5.67 + 2 + 2
+        assertEquals(9.67, totalPrice, 0.001);
     }
 
 }
